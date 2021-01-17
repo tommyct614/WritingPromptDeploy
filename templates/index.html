@@ -1,0 +1,27 @@
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='styles.css')}}">
+{% endblock %}
+{% block title %}This is an example page{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block content %}
+  <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+  <h1 class="display-4">Your Next Big Story Idea...</h1>
+  <p class="lead">Click on the "Randomize" button below to get a new writing prompt</p>
+  <hr class="my-4">
+  <p>This webapp is meant for entertainment purposes only. All works are owned by the respective authors.</p>
+  <p class="lead text-center">
+    <a class="btn btn-primary btn-lg " href="{{url_for('prompt') }}" role="button">Randomize!</a>
+  </p>
+          </div>
+</div>
+{% endblock %}
